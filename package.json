@@ -1,0 +1,19 @@
+{
+  "name": "agentic-testing",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.14.0",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "bootstrap": "pnpm install && pnpm --filter @conduit/api db:setup",
+    "dev": "pnpm --parallel --filter @conduit/api --filter @conduit/web dev",
+    "dev:api": "pnpm --filter @conduit/api dev",
+    "dev:web": "pnpm --filter @conduit/web dev",
+    "test": "pnpm --filter e2e test",
+    "test:ui": "pnpm --filter e2e test:ui",
+    "test:api": "pnpm --filter e2e test:api",
+    "check": "bash scripts/check-guards.sh"
+  }
+}

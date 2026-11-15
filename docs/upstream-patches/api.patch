@@ -1,0 +1,37 @@
+diff --color -ruN -x .git -x node_modules -x .nitro -x .output -x generated -x dev.db -x .env -x realworld -x bun.lock -x .gitmodules -x .github api/nitro.config.ts b/nitro.config.ts
+--- a/nitro.config.ts	2026-11-15 11:00:42
++++ b/nitro.config.ts	2026-11-15 11:01:13
+@@ -1,6 +1,7 @@
+ //https://nitro.unjs.io/config
+ export default defineNitroConfig({
+-  preset: "bun",
++  preset: "node-server",
++  compatibilityDate: "2026-11-15",
+   srcDir: "server",
+   errorHandler: "~/error-handler",
+   routeRules: {
+diff --color -ruN -x .git -x node_modules -x .nitro -x .output -x generated -x dev.db -x .env -x realworld -x bun.lock -x .gitmodules -x .github api/package.json b/package.json
+--- a/package.json	2026-11-15 11:00:42
++++ b/package.json	2026-11-15 11:01:51
+@@ -1,14 +1,15 @@
+ {
++  "name": "@conduit/api",
+   "private": true,
+   "scripts": {
+     "build": "nitro build",
+-    "dev": "nitro dev",
++    "dev": "nitro dev --port 3000",
+     "prepare": "nitro prepare",
+-    "preview": "bun .output/server/index.mjs",
+-    "start": "bun .output/server/index.mjs",
+-    "db:generate": "bun x prisma generate",
+-    "db:push": "bun x prisma db push",
+-    "test": "bun test"
++    "start": "node .output/server/index.mjs",
++    "db:generate": "prisma generate",
++    "db:push": "prisma db push",
++    "db:setup": "nitro prepare && prisma generate && prisma db push",
++    "test:unit": "bun test"
+   },
+   "devDependencies": {
+     "@ngneat/falso": "^5.0.0",

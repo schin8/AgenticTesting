@@ -1,0 +1,21 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
+.claude/settings.local.json
+
+# app build output
+apps/web/.svelte-kit/
+apps/web/build/
+apps/api/.output/
+apps/api/.nitro/
+apps/api/generated/
+apps/api/*.db
+apps/api/*.db-journal
+
+# Playwright
+e2e/test-results/
+e2e/playwright-report/
+e2e/blob-report/
+e2e/.auth/

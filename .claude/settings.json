@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "ask": [
+      "Edit(/e2e/tests/ui/auth.smoke.spec.ts)",
+      "Edit(/e2e/tests/api/users-login.spec.ts)",
+      "Edit(/docs/proposal.md)"
+    ],
+    "deny": [
+      "Read(/apps/api/.env)",
+      "Read(/seeded-bugs/**)",
+      "Read(~/Src/Projects/realworld-holdout/**)",
+      "WebFetch(domain:demo.realworld.show)",
+      "WebFetch(domain:api.realworld.show)"
+    ]
+  }
+}
